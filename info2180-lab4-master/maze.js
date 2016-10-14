@@ -14,7 +14,8 @@ window.onload = function main ()
 	
 	var edges = document.querySelectorAll(".boundary");
  	var count=0;
-	var 
+	var end = document.getElementById('end');
+ 	var start=document.getElementById('start');
   
  	for(var i=0;i< edges.length;i++)
 	{
@@ -39,7 +40,15 @@ end.onmouseover=function()
 			{alert ("Congrats!!!");}
 		
 	
-}
+};
+start.onclick=function()
+{
+	for (var h=0; h< edges.length; h++)
+	{
+		edges[h].setAttribute("class","boundary")
+		count=0;
+	}
+};
 	
 
 };
