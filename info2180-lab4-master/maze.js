@@ -16,6 +16,7 @@ window.onload = function main ()
  	var count=0;
 	var end = document.getElementById('end');
  	var start=document.getElementById('start');
+	var msg=document.getElementById("status").textContent;
   
  	for(var i=0;i< edges.length;i++)
 	{
@@ -28,6 +29,7 @@ window.onload = function main ()
 				{
  				edges[h].setAttribute("class","youlose boundary");
  				}
+				document.getElementById("status").innerHTML = "Try again ";
  			}
  		}
  	}
@@ -35,9 +37,9 @@ window.onload = function main ()
 	
 end.onmouseover=function()
 {
-	if (count > 0){alert ("Come on Bruh!!!");}
+	if (count > 0){document.getElementById("status").innerHTML = "Try again ";}
 		else
-			{alert ("Congrats!!!");}
+			{document.getElementById("status").innerHTML = "Congratulations ";}
 		
 	
 };
@@ -48,6 +50,7 @@ start.onclick=function()
 		edges[h].setAttribute("class","boundary")
 		count=0;
 	}
+	document.getElementById("status").innerHTML = msg;
 };
 	
 
